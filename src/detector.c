@@ -1242,6 +1242,7 @@ float validate_detector_map(char *datacfg, char *cfgfile, char *weightfile, floa
         {
             double last_recall = pr[i][detections_count - 1].recall;
             double last_precision = pr[i][detections_count - 1].precision;
+            printf("class_id = %d, rank = %d, cur_recall = %.4f, cur_precision = %.4f \n", i, rank, last_recall, last_precision);
             for (rank = detections_count - 2; rank >= 0; --rank)
             {
                 double delta_recall = last_recall - pr[i][rank].recall;
